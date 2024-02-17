@@ -1,7 +1,7 @@
-import Banner from "../Banner/Banner";
-import Features from "../Features/Features";
-import Reviews from "../Reviews/Reviews";
-import Services from "../Services/Services";
+import Banner from "../../components/Banner/Banner";
+import Features from "../../components/Features/Features";
+import Reviews from "../../components/Reviews/Reviews";
+import Services from "../../components/Services/Services";
 
 const Home = () => {
 
