@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "item-1",
+        "service_name": "Tech Conference",
+        "description": "Organize and manage a tech conference. Talk with your large team without any hassle.",
+        "price": "100",
+        "image_url": "https://i.ibb.co/ZcKkzQy/pexels-matheus-bertelli-2608517.jpg"
+    },
+    {
+        "_id": "item-2",
+        "service_name": "Gaming Tournaments",
+        "description": "We like to organize gaming tournaments as much as you.",
+        "price": "300",
+        "image_url": "https://i.ibb.co/NrqfQ9M/3567.jpg"
+    },
+    {
+        "_id": "item-3",
+        "service_name": "Live Streaming and Content Creation",
+        "description": "Live streaming event is fun and we made it more interesting.",
+        "price": "200",
+        "image_url": "https://i.ibb.co/pnHTNSB/2150951243.jpg"
+    },
+    {
+        "_id": "item-4",
+        "service_name": "E-Sports Management",
+        "description": "Again Games! Yes! We also manage e-sports event.",
+        "price": "300",
+        "image_url": "https://i.ibb.co/Sn011s7/stem-list-EVgs-Ab-L51-Rk-unsplash.jpg"
+    },
+    {
+        "_id": "item-5",
+        "service_name": "Hackathons",
+        "description": "Looking for a great hackathons spot? We are here for you.",
+        "price": "200",
+        "image_url": "https://i.ibb.co/pnzYdHY/pexels-matheus-bertelli-19012053.jpg"
+    },
+    {
+        "_id": "item-6",
+        "service_name": "Virtual Reality",
+        "description": "We can organize a huge virtual reality event with lots of vr set and a great virtual environment.",
+        "price": "500",
+        "image_url": "https://i.ibb.co/nmv4Qv8/pexels-mikhail-nilov-7886853.jpg"
+    }
+]
