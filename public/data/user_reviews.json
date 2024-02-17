@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "65d0be5fd9d2cba2eae11374",
+        "picture": "https://placekitten.com/100/100",
+        "name": "Hamim Ahmed",
+        "star": 5,
+        "reviews": "As a gaming enthusiast, this event management site has become my go-to for the latest gaming tournaments and tech events. The user-friendly interface makes registration a breeze, and the variety of events cater to both gamers and tech enthusiasts. Highly recommended!"
+    },
+    {
+        "_id": "65d0be5f64f35a862768ce24",
+        "picture": "https://placekitten.com/100/100",
+        "name": "Rased Khan",
+        "star": 4,
+        "reviews": "Tech events galore! This site has been a treasure trove for someone like me who thrives on tech conferences. The diverse range of events, from AI workshops to VR showcases, keeps me engaged. Kudos for seamlessly integrating both gaming and tech events under one platform."
+    },
+    {
+        "_id": "65d0be5f30df0d6dfd82a185",
+        "picture": "https://placekitten.com/100/100",
+        "name": "Jibon Ahmed",
+        "star": 5,
+        "reviews": "Finally, a site that understands the gaming community! The gaming events here are top-notch, with well-organized tournaments and exciting prizes. The tech events are a bonus, providing a holistic experience for both gaming and tech lovers."
+    },
+    {
+        "_id": "65d0be5f6c5995e8245127e6",
+        "picture": "https://placekitten.com/100/100",
+        "name": "Jafor Iqbal",
+        "star": 5,
+        "reviews": "I've attended multiple tech conferences through this site, and the quality is consistently impressive. The event descriptions are detailed, and the registration process is straightforward. A reliable platform for staying updated on the latest in gaming and technology."
+    },
+    {
+        "_id": "65d0be5f1d600b2dd448a3d7",
+        "picture": "https://placekitten.com/100/100",
+        "name": "Shamim Islam",
+        "star": 4.5,
+        "reviews": "For serious gamers and techies alike, this site delivers. The gaming tournaments are intense, and the tech events provide valuable insights. The live streaming option is a game-changer for those who can't attend physically. Truly a comprehensive platform for the gaming and tech community."
+    },
+    {
+        "_id": "65d0be5f8b2b4176c9beb894",
+        "picture": "https://placekitten.com/100/100",
+        "name": "Rasel Haq",
+        "star": 5,
+        "reviews": "The tech events curated here are a goldmine for anyone interested in innovation. Attended a hackathon recently, and the coordination was impeccable. This site is doing a great job in bringing together the gaming and tech worlds seamlessly."
+    }
+]

@@ -11,7 +11,7 @@ const Features = () => {
             <div className='bg-slate-400 w-62 px-5 py-8 rounded-2xl flex flex-col justify-center items-center gap-3'>
                 <FaLocationDot  className='text-6xl' />
                 <h1 className='text-2xl font-bold'>Great Location</h1>
-                <p className='text-xs'>We have a great location. You will love it.</p>
+                <p className='text-xs'>We have a great location. You will definitely love it.</p>
             </div>
         </div>
     );

@@ -9,10 +9,7 @@ const Services = () => {
     }, [])
 
     return (
-        <div className="flex justify-center items-center flex-col gap-10">
-            <div>
-                <h1 className="text-3xl font-semibold">Our Services</h1>
-            </div>
+        <div>
             <div className="grid grid-col-1 lg:grid-cols-2 gap-4">
                 {
                     services.map(service => <div className="card w-80 lg:w-96 bg-base-100 shadow-xl image-full" key={service._id}>
