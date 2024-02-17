@@ -1,0 +1,25 @@
+{
+    "carousel": [
+        {
+            "_id": "item-1",
+            "image_url": "https://i.ibb.co/pnzYdHY/pexels-matheus-bertelli-19012053.jpg"
+        },
+        {
+            "_id": "item-2",
+            "image_url": "https://i.ibb.co/ZcKkzQy/pexels-matheus-bertelli-2608517.jpg"
+        },
+        {
+            "_id": "item-3",
+            "image_url": "https://i.ibb.co/NrqfQ9M/3567.jpg"
+        },
+        {
+            "_id": "item-4",
+            "image_url": "https://i.ibb.co/pnHTNSB/2150951243.jpg"
+        },
+        {
+            "_id": "item-5",
+            "image_url": "https://i.ibb.co/Sn011s7/stem-list-EVgs-Ab-L51-Rk-unsplash.jpg"
+        }
+        
+    ]
+}
