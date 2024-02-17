@@ -10,7 +10,7 @@ const Home = () => {
             <div>
                 <Banner />
             </div>
-            <div className="mt-[calc(100vh-500px)]">
+            <div className="mt-[calc(100vh-500px)] will-change-scroll">
                 {/* Our Features */}
                 <div className="bg-slate-50 p-3 mb-6 rounded-lg">
                     <Features />

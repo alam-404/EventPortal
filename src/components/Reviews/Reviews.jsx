@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaStar, FaStarHalf } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
 
 const Reviews = () => {
     const [userReviews, setUserReviews] = useState([])
@@ -20,8 +20,8 @@ const Reviews = () => {
 // review card
 const ReviewCard = ({ reviews }) => {
     return (
-        <div>
-            <div className="card h-80 bg-base-100 shadow-xl">
+        <div className="even:mt-12 even:mb-3">
+            <div className="card h-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <div className="flex items-center gap-2">
                         <div className="avatar">
@@ -51,7 +51,7 @@ const ReviewCard = ({ reviews }) => {
 const reviewStar = (stars) => {
     const starArr = []
     for (let i = 0; i < stars; i++) {
-        starArr.push(<FaStar />)
+        starArr.push(<FaStar key={Math.random()}/>)
     }
     return starArr;
 }

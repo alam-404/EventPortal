@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 const Root = () => {
     return (
-        <>
+        <div className='scroll-smooth'>
             <header className='lg:mx-32'>
                 <Navbar />
             </header>
@@ -16,7 +16,7 @@ const Root = () => {
             <footer className='mt-10'>
                 <Footer />
             </footer>
-        </>
+        </div>
     );
 };
 
