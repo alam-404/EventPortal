@@ -21,7 +21,6 @@ const Navbar = () => {
                                 {
                                     location.pathname == '/login' || location.pathname == '/register' ?
                                         '' : <Link className="btn btn-primary text-white" to='/login'>Login</Link>
-
                                 }
                             </li>
                         </ul>
@@ -43,7 +42,6 @@ const Navbar = () => {
                     {
                         location.pathname == '/login' || location.pathname == '/register' ?
                             '' : <Link className="hidden lg:btn lg:btn-primary text-white" to='/login'>Login</Link>
-
                     }
                 </div>
             </div>
