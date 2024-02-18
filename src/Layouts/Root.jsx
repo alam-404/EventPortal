@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
+import { ToastContainer } from 'react-toastify';
 
 // Root Layout
 const Root = () => {
@@ -10,6 +11,7 @@ const Root = () => {
 
     return (
         <>
+        <ToastContainer />
         {
             pageLoading ? 
             <div className='w-full h-[100lvh] flex flex-col justify-center items-center'>

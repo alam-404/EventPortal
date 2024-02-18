@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { FaEnvelope, FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
 
     // AuthContext
-    const { createUser } = useContext(AuthContext)
+    const { user, createUser } = useContext(AuthContext)
 
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(0)
@@ -14,10 +15,13 @@ const Register = () => {
     // error state
     const [errorPassword, setErrorPassword] = useState('')
     const [confirmError, setConfirmError] = useState('')
+    const [error, setError] = useState('')
 
     const formSubmit = (event) => {
         // reset error
         setErrorPassword('')
+        setConfirmError('')
+        setError('')
         // prevent default reload page action
         event.preventDefault();
 
@@ -29,9 +33,15 @@ const Register = () => {
         // create user
         createUser(name, email, password)
             .then(result => {
-                console.log("User Created Successfully!")
+                toast("User account created.")
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                const errorCode = error.code
+                if (errorCode == "auth/email-already-in-use"){
+                    setError("User already exist with this account.")
+                    return
+                }
+            })
 
         // reset the form after submit
         form.reset()
@@ -71,82 +81,85 @@ const Register = () => {
 
     return (
         <div className="hero w-full h-[100lvh]">
-            <div className="card bg-white shadow-lg w-80 lg:w-96 p-8 border">
-                <h1 className="text-2xl font-semibold text-center mb-5">Register</h1>
-                {/* Register Form */}
-                <form onSubmit={formSubmit}>
-                    <div className="mb-5">
-                        {/* User Name */}
-                        <label className="input input-bordered flex items-center gap-3 mb-2">
-                            <FaUser />
-                            <input
-                                type="text"
-                                className="grow"
-                                placeholder="Name"
-                                name="name"
-                                required />
-                        </label>
-                        {/* Email */}
-                        <label className="input input-bordered flex items-center gap-3 mb-2">
-                            <FaEnvelope />
-                            <input
-                                type="email"
-                                className="grow"
-                                placeholder="Email"
-                                name="email"
-                                required />
-                        </label>
-                        {/* Password */}
-                        <div className="mb-2">
-                            <label className={`input input-bordered ${errorPassword ? 'input-error' : ''} flex items-center gap-3`}>
-                                <FaLock />
+            {user ? <Navigate to='/' /> :
+                <div className="card bg-white shadow-lg w-80 lg:w-96 p-8 border">
+                    <h1 className="text-2xl font-semibold text-center mb-5">Register</h1>
+                    {/* Register Form */}
+                    <form onSubmit={formSubmit}>
+                        <div className="mb-5">
+                            {/* User Name */}
+                            <label className="input input-bordered flex items-center gap-3 mb-2">
+                                <FaUser />
                                 <input
-                                    type={showPassword ? 'text' : 'password'}
+                                    type="text"
                                     className="grow"
-                                    placeholder="Password"
-                                    name="password"
-                                    onChange={checkPassword}
+                                    placeholder="Name"
+                                    name="name"
                                     required />
-                                <span onClick={() => setShowPassword(!showPassword)} className="cursor-pointer">
-                                    {
-                                        showPassword ? <FaEyeSlash /> : <FaEye />
-                                    }
-                                </span>                            </label>
-                            <span className="text-red-500 block my-2">{errorPassword}</span>
-                        </div>
-                        {/* Confirm Password */}
-                        <div>
-                            <label className={`input input-bordered ${confirmError ? 'input-error' : ''} flex items-center gap-3`}>
-                                <FaLock />
+                            </label>
+                            {/* Email */}
+                            <label className="input input-bordered flex items-center gap-3 mb-2">
+                                <FaEnvelope />
                                 <input
-                                    type={showPassword ? 'text' : 'password'}
+                                    type="email"
                                     className="grow"
-                                    placeholder="Confirm Password"
-                                    name="confirm_password"
-                                    onChange={confirmPassword}
+                                    placeholder="Email"
+                                    name="email"
                                     required />
-                                <span onClick={() => setShowPassword(!showPassword)} className="cursor-pointer">
-                                    {
-                                        showPassword ? <FaEyeSlash /> : <FaEye />
-                                    }
-                                </span>
                             </label>
-                            <span className="text-red-500 block my-2">{confirmError}</span>
+                            {/* Password */}
+                            <div className="mb-2">
+                                <label className={`input input-bordered ${errorPassword ? 'input-error' : ''} flex items-center gap-3`}>
+                                    <FaLock />
+                                    <input
+                                        type={showPassword ? 'text' : 'password'}
+                                        className="grow"
+                                        placeholder="Password"
+                                        name="password"
+                                        onChange={checkPassword}
+                                        required />
+                                    <span onClick={() => setShowPassword(!showPassword)} className="cursor-pointer">
+                                        {
+                                            showPassword ? <FaEyeSlash /> : <FaEye />
+                                        }
+                                    </span>                            </label>
+                                <span className="text-red-500 block my-2">{errorPassword}</span>
+                            </div>
+                            {/* Confirm Password */}
+                            <div>
+                                <label className={`input input-bordered ${confirmError ? 'input-error' : ''} flex items-center gap-3`}>
+                                    <FaLock />
+                                    <input
+                                        type={showPassword ? 'text' : 'password'}
+                                        className="grow"
+                                        placeholder="Confirm Password"
+                                        name="confirm_password"
+                                        onChange={confirmPassword}
+                                        required />
+                                    <span onClick={() => setShowPassword(!showPassword)} className="cursor-pointer">
+                                        {
+                                            showPassword ? <FaEyeSlash /> : <FaEye />
+                                        }
+                                    </span>
+                                </label>
+                                <span className="text-red-500 block my-2">{confirmError}</span>
+                            </div>
+                            {/* Accept Terms and Conditions */}
+                            <div className="form-control mt-6">
+                                <label className="flex gap-3 items-center cursor-pointer">
+                                    <input type="checkbox" className="checkbox checkbox-primary w-6 h-6" required />
+                                    <span className="text-sm">Accept our <Link to='/terms' className="link">Terms and Conditions</Link> </span>
+                                </label>
+                            </div>
                         </div>
-                        {/* Accept Terms and Conditions */}
-                        <div className="form-control mt-6">
-                            <label className="flex gap-3 items-center cursor-pointer">
-                                <input type="checkbox" className="checkbox checkbox-primary w-6 h-6"  required />
-                                <span className="text-sm">Accept our <Link to='/terms' className="link">Terms and Conditions</Link> </span>
-                            </label>
-                        </div>
-                    </div>
-                    {/* Submit Button */}
-                    <button type="submit" className="btn btn-primary text-white w-full">Register</button>
-                </form>
-                {/* Goto login page */}
-                <h5 className="mt-5">Already an user? <Link className="link font-semibold text-green-500 hover:text-green-600" to="/login">Login</Link></h5>
-            </div>
+                        {/* Submit Button */}
+                        <span className="text-red-500 block my-2">{error}</span>
+                        <button type="submit" className="btn btn-primary text-white w-full">Register</button>
+                    </form>
+                    {/* Goto login page */}
+                    <h5 className="mt-5">Already an user? <Link className="link font-semibold text-green-500 hover:text-green-600" to="/login">Login</Link></h5>
+                </div>
+            }
         </div>
     );
 };
