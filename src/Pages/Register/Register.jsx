@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEnvelope, FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
+
+    // AuthContext
+    const { createUser } = useContext(AuthContext)
 
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(0)
@@ -14,12 +18,22 @@ const Register = () => {
     const formSubmit = (event) => {
         // reset error
         setErrorPassword('')
-
+        // prevent default reload page action
         event.preventDefault();
+
+        // get value from register form
         const form = event.target
         const email = form.email.value
         const password = form.password.value
-        console.log(email, password)
+        const name = form.name.value
+        // create user
+        createUser(name, email, password)
+            .then(result => {
+                console.log("User Created Successfully!")
+            })
+            .catch(error => console.error(error))
+
+        // reset the form after submit
         form.reset()
     }
 
@@ -57,7 +71,7 @@ const Register = () => {
 
     return (
         <div className="hero w-full h-[100lvh]">
-            <div className="card shadow-lg w-80 lg:w-96 p-8 border">
+            <div className="card bg-white shadow-lg w-80 lg:w-96 p-8 border">
                 <h1 className="text-2xl font-semibold text-center mb-5">Register</h1>
                 {/* Register Form */}
                 <form onSubmit={formSubmit}>
@@ -122,7 +136,7 @@ const Register = () => {
                         {/* Accept Terms and Conditions */}
                         <div className="form-control mt-6">
                             <label className="flex gap-3 items-center cursor-pointer">
-                                <input type="checkbox" className="checkbox checkbox-primary w-6 h-6" />
+                                <input type="checkbox" className="checkbox checkbox-primary w-6 h-6"  required />
                                 <span className="text-sm">Accept our <Link to='/terms' className="link">Terms and Conditions</Link> </span>
                             </label>
                         </div>

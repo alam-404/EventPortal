@@ -1,6 +1,6 @@
 const TermsAndCondition = () => {
     return (
-        <div className="mt-8">
+        <div className="my-20">
             <article className="text-justify">
                 <h1 className="font-bold text-4xl">Terms and Conditions of Use</h1>
                 <div className="ms-4">
@@ -23,8 +23,8 @@ const TermsAndCondition = () => {
 
                     <div className="mt-4">
                         <h3 className="font-bold text-2xl text-slate-700">3. User Conduct</h3>
-                        <p className='ms-6'>
-                            You agree to use the Service in compliance with all applicable laws, regulations, and these Terms. Prohibited activities include, but are not limited to:
+                        <div className='ms-6'>
+                            <p>You agree to use the Service in compliance with all applicable laws, regulations, and these Terms. Prohibited activities include, but are not limited to:</p>
                             <span className="block ms-10">
                                 <ul className="list-disc">
                                     <li className="list-item">Violating any laws or regulations.</li>
@@ -32,7 +32,7 @@ const TermsAndCondition = () => {
                                     <li className="list-item">Engaging in disruptive or harmful behavior.</li>
                                 </ul>
                             </span>
-                        </p>
+                        </div>
                     </div>
 
                     <div className="mt-4">
