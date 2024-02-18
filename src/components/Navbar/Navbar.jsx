@@ -1,10 +1,11 @@
 import { FaSun, FaMoon } from 'react-icons/fa6';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+    const location = useLocation();
     return (
         <div>
-            <div className="navbar bg-transparent sticky top-0 left-0">
+            <div className="navbar bg-black/40 px-10 rounded-full mt-5 sticky top-0 left-0">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn text-white btn-ghost lg:hidden">
@@ -32,7 +33,11 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {/* <button><FaSun></FaSun><FaMoon></FaMoon></button> */}
-                    <Link className="btn">Login</Link>
+                    {
+                        location.pathname == '/login' || location.pathname == '/register' ?
+                            '' : <Link className="btn" to='/login'>Login</Link>
+
+                    }
                 </div>
             </div>
         </div>
@@ -42,7 +47,7 @@ const Navbar = () => {
 // Active Navigation link
 const ActiveLink = ({ children, to }) => {
     return (
-        <NavLink className={({ isActive }) => isActive ? 'text-green-500 font-bold' : ''} to={to}>
+        <NavLink className={({ isActive }) => isActive ? 'text-green-500 font-bold underline' : ''} to={to}>
             {children}
         </NavLink>
     )

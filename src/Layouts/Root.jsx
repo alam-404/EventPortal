@@ -5,7 +5,7 @@ const Root = () => {
     return (
         <div className='scroll-smooth'>
             <header className='lg:mx-32'>
-                <Navbar />
+                <Navbar/>
             </header>
             <section className='lg:mx-32'>
                 <Outlet></Outlet>
