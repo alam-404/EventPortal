@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Register = () => {
     return (
         <div className="hero w-full h-[100lvh]">
-            <div className="card shadow-lg w-96 p-8 border">
+            <div className="card shadow-lg w-80 lg:w-96 p-8 border">
                 <h1 className="text-2xl font-semibold text-center mb-5">Register</h1>
                 <form>
                     <div className="mb-5">

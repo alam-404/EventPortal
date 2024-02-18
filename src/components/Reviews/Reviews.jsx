@@ -9,7 +9,7 @@ const Reviews = () => {
             .then(data => setUserReviews(data))
     }, [])
     return (
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mx-3">
             {
                 userReviews.map(reviews => <ReviewCard key={reviews._id} reviews={reviews} />)
             }
@@ -20,12 +20,12 @@ const Reviews = () => {
 // review card
 const ReviewCard = ({ reviews }) => {
     return (
-        <div className="even:mt-12 even:mb-3">
+        <div className="lg:even:mt-12 lg:even:mb-3">
             <div className="card h-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <div className="flex items-center gap-2">
                         <div className="avatar">
-                            <div className="w-16 rounded-full">
+                            <div className="w-12 lg:w-16 rounded-full">
                                 <img src={reviews.picture} />
                             </div>
                         </div>
@@ -39,7 +39,7 @@ const ReviewCard = ({ reviews }) => {
                         </div>
                     </div>
                     <div className="mt-4">
-                        <p className="text-lg">{reviews.reviews}</p>
+                        <p className="text-base lg:text-lg">{reviews.reviews}</p>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@ const Navbar = () => {
     const location = useLocation();
     return (
         <div>
-            <div className="navbar bg-black/40 px-10 rounded-full mt-5 sticky top-0 left-0">
+            <div className="navbar bg-slate-800/40 px-5 lg:px-10 rounded-full mt-5 sticky top-0 left-0">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn text-white btn-ghost lg:hidden">
@@ -17,6 +17,13 @@ const Navbar = () => {
                                 <ActiveLink to='/services'>Services</ActiveLink>
                             </li>
                             <li><ActiveLink to='/about'>About</ActiveLink></li>
+                            <li className='mt-5'>
+                                {
+                                    location.pathname == '/login' || location.pathname == '/register' ?
+                                        '' : <Link className="btn btn-primary text-white" to='/login'>Login</Link>
+
+                                }
+                            </li>
                         </ul>
                     </div>
                     <Link to='/' className="text-xl font-semibold hidden lg:block text-white">EventPortal</Link>
@@ -35,7 +42,7 @@ const Navbar = () => {
                     {/* <button><FaSun></FaSun><FaMoon></FaMoon></button> */}
                     {
                         location.pathname == '/login' || location.pathname == '/register' ?
-                            '' : <Link className="btn" to='/login'>Login</Link>
+                            '' : <Link className="hidden lg:btn lg:btn-primary text-white" to='/login'>Login</Link>
 
                     }
                 </div>

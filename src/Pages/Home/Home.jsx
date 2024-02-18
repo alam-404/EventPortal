@@ -10,7 +10,7 @@ const Home = () => {
             <div>
                 <Banner />
             </div>
-            <div className="mt-[calc(100vh-500px)] will-change-scroll">
+            <div className="mt-[calc(100vh-600px)] lg:mt-[calc(100vh-500px)] will-change-scroll">
                 {/* Our Features */}
                 <div className="bg-slate-50 p-3 mb-6 rounded-lg">
                     <Features />
@@ -33,6 +33,9 @@ const Home = () => {
                     <h1 className="text-3xl font-semibold">Our Reviews</h1>
                     <Reviews />
                 </div>
+                <section className='mt-10 flex justify-center'>
+                    <hr className='w-44' />
+                </section>
             </div>
         </div>
     );

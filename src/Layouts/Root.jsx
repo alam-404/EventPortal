@@ -4,14 +4,11 @@ import Footer from '../components/Footer/Footer';
 const Root = () => {
     return (
         <div className='scroll-smooth'>
-            <header className='lg:mx-32'>
+            <header className='mx-3 lg:mx-32'>
                 <Navbar/>
             </header>
             <section className='lg:mx-32'>
                 <Outlet></Outlet>
-            </section>
-            <section className='mt-10 flex justify-center'>
-                <hr className='w-44'/>
             </section>
             <footer className='mt-10'>
                 <Footer />
