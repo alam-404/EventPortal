@@ -84,6 +84,10 @@ const TermsAndCondition = () => {
 
                             By using the Service, you agree to comply with these Terms. Thank you for using EventPortal!
                         </p>
+                        <p className='ms-6'>
+                            Do you want some gifts? maybe chocolates? then contact me! hehe...
+                            I can&apos;t give it to you right now but I will note it down for later. Ow yea I forgot nobody read terms and conditions.
+                        </p>
                     </div>
                 </div>
             </article>

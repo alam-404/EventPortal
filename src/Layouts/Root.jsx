@@ -1,6 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import Loading from '../components/Loading/Loading';
+
+
 import { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import { ToastContainer } from 'react-toastify';
@@ -14,10 +17,7 @@ const Root = () => {
         <ToastContainer />
         {
             pageLoading ? 
-            <div className='w-full h-[100lvh] flex flex-col justify-center items-center'>
-                <span className='loading loading-ball w-80 bg-green-600'></span>
-                <span className='text-xl font-semibold text-center'>Loading...</span>
-            </div>
+            <Loading />
             :
             <div className='scroll-smooth'>
                 <header className='mx-3 lg:mx-32'>

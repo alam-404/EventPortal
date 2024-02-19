@@ -12,13 +12,11 @@ const AuthProvider = ({ children }) => {
 
     // create user
     const createUser = (name, email, password) => {
-        setPageLoading(true)
         return createUserWithEmailAndPassword(firebaseAuth, email, password)
     }
 
     // login user
     const loginUser = (email, password) => {
-        setPageLoading(true)
         return signInWithEmailAndPassword(firebaseAuth, email, password)
     }
 
@@ -36,7 +34,7 @@ const AuthProvider = ({ children }) => {
             console.log("USER EXISTED")
         })
         return () => unsubscribe()
-    }, [])
+    }, [firebaseAuth])
 
     const authInfo = {
         user,
