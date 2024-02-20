@@ -31,7 +31,6 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
             setPageLoading(false)
             setUser(currentUser)
-            console.log("USER EXISTED")
         })
         return () => unsubscribe()
     }, [firebaseAuth])

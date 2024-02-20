@@ -1,43 +1,55 @@
 [
     {
-        "_id": "item-1",
+        "_id": "service-1",
         "service_name": "Tech Conference",
-        "description": "Organize and manage a tech conference. Talk with your large team without any hassle.",
+        "short_description": "Organize and manage a tech conference. Talk with your large team without any hassle.",
+        "description": "Tech conferences are events that bring together professionals, enthusiasts, innovators, and thought leaders from the technology industry to share insights, discuss emerging trends, and network. These conferences serve as platforms for individuals and organizations to explore the latest developments, exchange ideas, and stay informed about the rapidly evolving landscape of technology. Tech conferences can cover a wide range of topics and may include keynote presentations, panel discussions, workshops, and networking opportunities. They play a crucial role in fostering collaboration, showcasing innovations, and providing a forum for learning and professional growth within the tech community.",
+        "inside_package": "- Event Planing and Coordination. - Technical Support - Streaming facility - Large venue - Meal",
         "price": "100",
         "image_url": "https://i.ibb.co/ZcKkzQy/pexels-matheus-bertelli-2608517.jpg"
     },
     {
-        "_id": "item-2",
+        "_id": "service-2",
         "service_name": "Gaming Tournaments",
-        "description": "We like to organize gaming tournaments as much as you.",
+        "short_description": "We like to organize gaming tournaments as much as you.",
+        "description": "Gaming tournaments are competitive events where individuals or teams engage in organized video game competitions. These tournaments bring together gamers from various skill levels to compete against each other, often with the aim of determining the best player or team in a particular game. Gaming tournaments have become a significant aspect of the esports industry, attracting participants, spectators, and sponsors alike.",
+        "inside_package": "- Large venue - Large streaming facility - Space for spectators - Technical support - Streaming facility - Drink",
         "price": "300",
         "image_url": "https://i.ibb.co/NrqfQ9M/3567.jpg"
     },
     {
-        "_id": "item-3",
+        "_id": "service-3",
         "service_name": "Live Streaming and Content Creation",
-        "description": "Live streaming event is fun and we made it more interesting.",
+        "short_description": "Looking for a spot with huge screens? Live streaming materials? Here we are for you.",
+        "description": "Live Streaming: Live streaming refers to the real-time broadcasting of video content over the internet. Content creators or streamers use platforms like Twitch, YouTube, or other streaming services to share live video content with their audience. In the context of gaming and esports, live streaming often involves broadcasting gameplay, commentary, and interactions with viewers. Viewers can engage with the streamer through chat, creating an interactive and community-driven experience.\nContent Creation: Content creation is the process of producing and sharing creative material for a specific audience. In the digital era, content creation extends across various mediums, including written, visual, and multimedia formats. For gaming and esports, content creation involves producing videos, articles, social media posts, and other materials related to gaming, esports events, or specific games. Content creators often build communities around their content, engaging with their audience and contributing to the broader gaming and online communities.",
+        "inside_package": "- Large venue - Large streaming facility - Technical support - Streaming facility - Drink",
         "price": "200",
         "image_url": "https://i.ibb.co/pnHTNSB/2150951243.jpg"
     },
     {
-        "_id": "item-4",
+        "_id": "service-4",
         "service_name": "E-Sports Management",
-        "description": "Again Games! Yes! We also manage e-sports event.",
+        "short_description": "Again Games! Yes! We also manage e-sports event.",
+        "description": "Esports management involves overseeing and coordinating the various elements of competitive gaming, commonly known as esports. Esports, or electronic sports, refers to organized video game competitions where professional players and teams compete against each other for prizes. Esports management encompasses a range of responsibilities aimed at supporting and optimizing the performance of esports teams or individual players.",
+        "inside_package": "- Large venue - Large streaming facility - Space for spectators - Technical support - Streaming facility - Drink",
         "price": "300",
         "image_url": "https://i.ibb.co/Sn011s7/stem-list-EVgs-Ab-L51-Rk-unsplash.jpg"
     },
     {
-        "_id": "item-5",
+        "_id": "service-5",
         "service_name": "Hackathons",
-        "description": "Looking for a great hackathons spot? We are here for you.",
+        "short_description": "Looking for a great hackathons spot? We are here for you.",
+        "description": "A hackathon is an event, typically spanning a short duration like a day or a few days, where individuals or teams come together to collaborate intensively on software development projects. The term 'hackathon' is derived from 'hack' (creative problem-solving) and 'marathon' (an extended period of focused effort).",
+        "inside_package": "- Large venue - Meal - Space for more stall - Private rooms - Canteen - Technical support - Drink",
         "price": "200",
         "image_url": "https://i.ibb.co/pnzYdHY/pexels-matheus-bertelli-19012053.jpg"
     },
     {
-        "_id": "item-6",
+        "_id": "service-6",
         "service_name": "Virtual Reality",
-        "description": "We can organize a huge virtual reality event with lots of vr set and a great virtual environment.",
+        "short_description": "We can organize a huge virtual reality event with lots of vr set and a great virtual environment.",
+        "description": "Virtual Reality (VR) refers to a simulated environment created with the help of computer technology, often presented to the user in a way that engages their senses, primarily sight and sound. Unlike traditional user interfaces, VR places the user inside an experience, providing a sense of presence in a digital or imaginary world. ",
+        "inside_package": "- Large venue - VR Environment - Supports - Technical support - Streaming facility - Materials - Drink",
         "price": "500",
         "image_url": "https://i.ibb.co/nmv4Qv8/pexels-mikhail-nilov-7886853.jpg"
     }
