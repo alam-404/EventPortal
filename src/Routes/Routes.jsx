@@ -7,6 +7,7 @@ import TermsAndCondition from "../Pages/TermsAndCondition/TermsAndCondition";
 import PrivateRoutes from "./PrivateRoutes";
 import Service from "../components/Service/Service";
 import { serviceLoader } from "../utils/customLoader";
+import Error404 from "../Pages/Error/Error404";
 
 const routes = createBrowserRouter([
     {
@@ -34,7 +35,8 @@ const routes = createBrowserRouter([
                 path: '/terms',
                 element: <TermsAndCondition />
             }
-        ]
+        ],
+        errorElement: <Error404 />
     }
 ])
 
