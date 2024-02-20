@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { FaEnvelope, FaEye, FaEyeSlash, FaLock } from "react-icons/fa6";
+import { FaEnvelope, FaEye, FaEyeSlash, FaGoogle, FaLock } from "react-icons/fa6";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
@@ -7,7 +7,7 @@ import Loading from "../../components/Loading/Loading";
 
 const Login = () => {
     // Auth context
-    const { user, loginUser } = useContext(AuthContext)
+    const { user, loginUser, googleLogin } = useContext(AuthContext)
 
     // Location
     const location = useLocation()
@@ -21,6 +21,7 @@ const Login = () => {
     // error state
     const [error, setError] = useState('')
 
+    // login with email and password
     const formSubmit = (event) => {
         // prevent the default page reload action 
         // on form submit
@@ -49,6 +50,17 @@ const Login = () => {
 
         // reset the form on submit
         form.reset()
+    }
+
+    // Login with google
+    const loginWithGoogle = () => {
+        setLoading(true)
+
+        googleLogin()
+            .then(result => {
+                setLoading(false)
+                toast('Successfully logged in.')
+            })
     }
 
     return (
@@ -86,9 +98,20 @@ const Login = () => {
                                         {/* Login button */}
                                         <button type="submit" className="btn btn-primary text-white w-full">Login</button>
                                     </form>
-                                    <h5 className="mt-5">Don&apos;t have an account? <Link className="link font-semibold text-green-500 hover:text-green-600" to="/register" state={location.state}>Register</Link></h5>
+                                    {/* Go to login page */}
+                                    <div>
+                                        <h5 className="mt-5">Don&apos;t have an account? <Link className="link font-semibold text-green-500 hover:text-green-600" to="/register" state={location.state}>Register</Link></h5>
+                                    </div>
+                                    {/* Login with google */}
+                                    <div className='mt-8 mb-5 flex justify-center'>
+                                        <hr className='w-44' />
+                                    </div>
+                                    <div className="flex justify-center items-center">
+                                        <button className="btn btn-primary" onClick={loginWithGoogle}><FaGoogle className="text-3xl text-white" /></button>
+                                    </div>
                                 </div>
                         }
+
                     </div>
             }
         </>

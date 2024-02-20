@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
-import { FaEnvelope, FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa6";
+import { FaEnvelope, FaEye, FaEyeSlash, FaGoogle, FaLock, FaUser } from "react-icons/fa6";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
 import Loading from "../../components/Loading/Loading";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
     // AuthContext
-    const { user, createUser } = useContext(AuthContext)
+    const { user, setDisplayName, createUser, googleLogin } = useContext(AuthContext)
 
     // Location
     const location = useLocation()
@@ -26,6 +27,7 @@ const Register = () => {
     const [confirmError, setConfirmError] = useState('')
     const [error, setError] = useState('')
 
+    // register with email and password
     const formSubmit = (event) => {
         // reset error
         setErrorPassword('')
@@ -42,11 +44,13 @@ const Register = () => {
         // set a loading on submit
         setLoading(true)
         // create user
-        createUser(name, email, password)
+        createUser(email, password)
             .then(result => {
                 setLoading(false)
                 // reset the form after submit
                 form.reset()
+                // set display name
+                setDisplayName(name)
                 // notify user
                 toast("User account created.")
             })
@@ -58,6 +62,17 @@ const Register = () => {
                 if (errorCode == "auth/email-already-in-use") {
                     setError("User already exist with this account.")
                 }
+            })
+    }
+
+    // login with google
+    const loginWithGoogle = () => {
+        setLoading(true)
+
+        googleLogin()
+            .then(result => {
+                setLoading(false)
+                toast('Successfully logged in.')
             })
     }
 
@@ -175,7 +190,16 @@ const Register = () => {
                                     <button type="submit" className="btn btn-primary text-white w-full">Register</button>
                                 </form>
                                 {/* Goto login page */}
-                                <h5 className="mt-5">Already an user? <Link className="link font-semibold text-green-500 hover:text-green-600" to="/login">Login</Link></h5>
+                                <div>
+                                    <h5 className="mt-5">Already an user? <Link className="link font-semibold text-green-500 hover:text-green-600" to="/login">Login</Link></h5>
+                                </div>
+                                {/* Register with google */}
+                                <div className='mt-8 mb-5 flex justify-center'>
+                                    <hr className='w-44' />
+                                </div>
+                                <div className="flex justify-center items-center">
+                                    <button className="btn btn-primary" onClick={loginWithGoogle}><FaGoogle className="text-3xl text-white" /></button>
+                                </div>
                             </div>
                         }
                     </div>

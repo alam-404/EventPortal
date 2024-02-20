@@ -75,10 +75,10 @@ const Avatar = ({ logout, user }) => {
     return (
         <div className='dropdown'>
             <div tabIndex={0} className='w-12 rounded-full overflow-hidden border-2 border-gray-400 hover:border-green-500 cursor-pointer transition-colors duration-300'>
-                <img src='https://placekitten.com/100/100' className='' />
+                <img src={user.photoURL ? user.photoURL : 'https://placekitten.com/100/100'} className='' />
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-[#EEEDEB] rounded-box w-52 right-0 lg:left-0">
-                <li>{user.email}</li>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-[#EEEDEB] rounded-box w-52 text-wrap right-0">
+                <li>{user.displayName}</li>
                 <li className='mt-2'>
                     {
                         location.pathname == '/login' || location.pathname == '/register' ?

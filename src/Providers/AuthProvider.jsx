@@ -1,5 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { createContext, useEffect, useState } from "react";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import firebaseApp from "../firebase/firebase.auth";
 
 export const AuthContext = createContext(null)
@@ -7,17 +7,24 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [pageLoading, setPageLoading] = useState(true)
+    const [displayName, setDisplayName] = useState('')
 
     const firebaseAuth = getAuth(firebaseApp)
 
     // create user
-    const createUser = (name, email, password) => {
+    const createUser = (email, password) => {
         return createUserWithEmailAndPassword(firebaseAuth, email, password)
     }
 
     // login user
     const loginUser = (email, password) => {
         return signInWithEmailAndPassword(firebaseAuth, email, password)
+    }
+
+    // login with google
+    const googleLogin = () => {
+        const provider = new GoogleAuthProvider()
+        return signInWithPopup(firebaseAuth, provider)
     }
 
     // logout a user
@@ -30,15 +37,22 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
             setPageLoading(false)
+            if (displayName != '') {
+                updateProfile(currentUser, {
+                    displayName: displayName
+                })
+            }
             setUser(currentUser)
         })
         return () => unsubscribe()
-    }, [firebaseAuth])
+    }, [displayName, firebaseAuth])
 
     const authInfo = {
         user,
+        setDisplayName,
         pageLoading,
         loginUser,
+        googleLogin,
         createUser,
         logout
     }
