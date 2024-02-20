@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import BookedModal from "../BookedModal/BookedModal";
+import BookedModal from "../../components/BookedModal/BookedModal";
 
 const Service = () => {
     const service = useLoaderData()

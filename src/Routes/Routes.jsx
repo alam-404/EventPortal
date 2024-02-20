@@ -5,10 +5,11 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import TermsAndCondition from "../Pages/TermsAndCondition/TermsAndCondition";
 import PrivateRoutes from "./PrivateRoutes";
-import Service from "../components/Service/Service";
+import Service from "../Pages/Service/Service";
 import { serviceLoader } from "../utils/customLoader";
 import Error404 from "../Pages/Error/Error404";
 import About from "../Pages/About/About";
+import ReviewForm from "../Pages/ReviewForm/ReviewForm";
 
 const routes = createBrowserRouter([
     {
@@ -37,11 +38,18 @@ const routes = createBrowserRouter([
                 element: <About />
             },
             {
+                path: '/review',
+                element: <PrivateRoutes><ReviewForm /></PrivateRoutes>
+            },
+            {
                 path: '/terms',
                 element: <TermsAndCondition />
-            }
+            },
         ],
-        errorElement: <Error404 />
+    },
+    {
+        path: '*',
+        element: <Error404 />
     }
 ])
 
