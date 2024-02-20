@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEnvelope, FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa6";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
 import Loading from "../../components/Loading/Loading";
@@ -9,6 +9,9 @@ const Register = () => {
 
     // AuthContext
     const { user, createUser } = useContext(AuthContext)
+
+    // Location
+    const location = useLocation()
 
     // page loading
     const [loading, setLoading] = useState(false)
@@ -95,7 +98,7 @@ const Register = () => {
             {
                 loading ? <Loading /> :
                     <div className="hero w-full h-[100lvh]">
-                        {user ? <Navigate to='/' /> :
+                        {user ? <Navigate to={location?.state ? location.state : '/'} /> :
                             <div className="card bg-white shadow-lg w-80 lg:w-96 p-8 border">
                                 <h1 className="text-2xl font-semibold text-center mb-5">Register</h1>
                                 {/* Register Form */}

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEnvelope, FaEye, FaEyeSlash, FaLock } from "react-icons/fa6";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
 import Loading from "../../components/Loading/Loading";
@@ -8,6 +8,9 @@ import Loading from "../../components/Loading/Loading";
 const Login = () => {
     // Auth context
     const { user, loginUser } = useContext(AuthContext)
+
+    // Location
+    const location = useLocation()
 
     // page loading
     const [loading, setLoading] = useState(false)
@@ -55,7 +58,7 @@ const Login = () => {
                     <div className="hero w-full h-[100lvh]">
 
                         {
-                            user ? <Navigate to='/' /> :
+                            user ? <Navigate to={location?.state ? location.state : '/'} /> :
                                 <div className="card bg-white shadow-lg w-80 lg:w-96 p-8 border">
                                     <h1 className="text-2xl font-semibold text-center mb-5">Login</h1>
                                     <form onSubmit={formSubmit}>
@@ -83,7 +86,7 @@ const Login = () => {
                                         {/* Login button */}
                                         <button type="submit" className="btn btn-primary text-white w-full">Login</button>
                                     </form>
-                                    <h5 className="mt-5">Don&apos;t have an account? <Link className="link font-semibold text-green-500 hover:text-green-600" to="/register">Register</Link></h5>
+                                    <h5 className="mt-5">Don&apos;t have an account? <Link className="link font-semibold text-green-500 hover:text-green-600" to="/register" state={location.state}>Register</Link></h5>
                                 </div>
                         }
                     </div>
