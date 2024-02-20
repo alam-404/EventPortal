@@ -126,7 +126,7 @@ const Register = () => {
                                         </label>
                                         {/* Password */}
                                         <div className="mb-2">
-                                            <label className={`input input-bordered ${errorPassword ? 'input-error' : ''} flex items-center gap-3`}>
+                                            <label className={`input input-bordered ${errorPassword ? 'input-error' : ''} flex items-center justify-around lg:gap-3`}>
                                                 <FaLock />
                                                 <input
                                                     type={showPassword ? 'text' : 'password'}
@@ -144,7 +144,7 @@ const Register = () => {
                                         </div>
                                         {/* Confirm Password */}
                                         <div>
-                                            <label className={`input input-bordered ${confirmError ? 'input-error' : ''} flex items-center gap-3`}>
+                                            <label className={`input input-bordered ${confirmError ? 'input-error' : ''} flex items-center justify-around lg:gap-3`}>
                                                 <FaLock />
                                                 <input
                                                     type={showPassword ? 'text' : 'password'}

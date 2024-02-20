@@ -63,11 +63,11 @@ const Login = () => {
                                     <h1 className="text-2xl font-semibold text-center mb-5">Login</h1>
                                     <form onSubmit={formSubmit}>
                                         <div className="mb-5">
-                                            <label className={`input input-bordered ${error ? 'input-error' : ''} flex items-center gap-3 mb-2`}>
+                                            <label className={`input input-bordered ${error ? 'input-error' : ''} flex items-center lg:gap-3 mb-2`}>
                                                 <FaEnvelope />
                                                 <input type="email" className="grow" placeholder="Email" name="email" required />
                                             </label>
-                                            <label className={`input input-bordered ${error ? 'input-error' : ''} flex items-center gap-3`}>
+                                            <label className={`input input-bordered ${error ? 'input-error' : ''} flex items-center justify-around lg:gap-3`}>
                                                 <FaLock />
                                                 <input
                                                     type={showPassword ? 'text' : 'password'}
@@ -75,7 +75,7 @@ const Login = () => {
                                                     placeholder="Password"
                                                     name="password"
                                                     required />
-                                                <span onClick={() => setShowPassword(!showPassword)} className="cursor-pointer">
+                                                <span onClick={() => setShowPassword(!showPassword)} className="cursor-pointer ">
                                                     {
                                                         showPassword ? <FaEyeSlash /> : <FaEye />
                                                     }

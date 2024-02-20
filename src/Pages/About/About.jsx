@@ -52,7 +52,7 @@ const About = () => {
 
             <div className="mt-4">
                 <h2 className="mt-5 text-2xl font-semibold">Let&apos;s Create Magic Together:</h2>
-                <p className="mt-2">Whether you&apos;re planning a corporate conference, a dazzling wedding, or an immersive virtual experience, EventPortal is here to turn your dreams into reality. Join us on a journey where every detail matters, and every moment is crafted with care. Welcome to a world of unparalleled events &#2013; welcome to EventPortal.</p>
+                <p className="mt-2">Whether you&apos;re planning a corporate conference, a dazzling wedding, or an immersive virtual experience, EventPortal is here to turn your dreams into reality. Join us on a journey where every detail matters, and every moment is crafted with care. Welcome to a world of unparalleled events &#x2013; welcome to EventPortal.</p>
             </div>
         </div>
     );

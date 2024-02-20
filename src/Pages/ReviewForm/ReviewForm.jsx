@@ -1,4 +1,5 @@
 import { FaStar } from "react-icons/fa6";
+import Modal from "../../components/Modal/Modal";
 
 const ReviewForm = () => {
     const rankStar = (starNum) => {
@@ -39,17 +40,10 @@ const ReviewForm = () => {
                 </div>
             </div>
             <div>
-                <dialog id="success-modal" className="bg-transparent">
-                    <div className="modal-box w-96 shadow-sm">
-                        <h3 className="font-bold text-lg text-success">Thank You!</h3>
-                        <p className="py-4">Thank you for sharing your valuable feedback with us! Your thoughts matter and we appreciate you taking the time to provide us with your insights. Your input helps us to enhance our services. Your feedback is truly appreciate</p>
-                        <div className="modal-action">
-                            <form method="dialog">
-                                <button className="btn">Close</button>
-                            </form>
-                        </div>
-                    </div>
-                </dialog>
+                <Modal>
+                    <h3 className="font-bold text-lg text-success">Thank You!</h3>
+                    <p className="py-4">Thank you for sharing your valuable feedback with us! Your thoughts matter and we appreciate you taking the time to provide us with your insights. Your input helps us to enhance our services. Your feedback is truly appreciate</p>
+                </Modal>
             </div>
         </>
     );

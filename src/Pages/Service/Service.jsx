@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import BookedModal from "../../components/BookedModal/BookedModal";
+import Modal from "../../components/Modal/Modal";
 
 const Service = () => {
     const service = useLoaderData()
@@ -10,7 +10,7 @@ const Service = () => {
     const [booked, setBooked] = useState(false)
     const bookButton = () => {
         setBooked(true)
-        document.getElementById('book-modal').showModal()
+        document.getElementById('success-modal').showModal()
     }
 
     return (
@@ -42,7 +42,10 @@ const Service = () => {
             </div>
             {/* Show modal when book button is clicked */}
             <div>
-                <BookedModal service={service} />
+                <Modal>
+                    <h3 className="font-bold text-lg text-success">Success!!</h3>
+                    <p className="py-4">Your event booking is confirmed. Get ready for an extraordinary experience filled with innovation, excitement and unforgettable moments. We look forward to hosting you at {service.service_name}. If you have any questions or special requests, feel free to reach out. See you there.</p>
+                </Modal>
             </div>
         </>
     );

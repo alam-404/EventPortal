@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa6';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
@@ -20,12 +19,14 @@ const Navbar = () => {
                                 <ActiveLink to='/services'>Services</ActiveLink>
                             </li>
                             <li><ActiveLink to='/about'>About</ActiveLink></li>
-                            <li className='mt-5'>
-                                {
-                                    location.pathname == '/login' || location.pathname == '/register' ?
-                                        '' : <Link className="btn btn-primary text-white" to='/login'>Login</Link>
-                                }
-                            </li>
+                            {
+                                location.pathname == '/login' || location.pathname == '/register' ?
+                                    '' :
+                                    user ? '' :
+                                        <li className='mt-5'>
+                                            <Link className="btn btn-primary text-white" to='/login'>Login</Link>
+                                        </li>
+                            }
                         </ul>
                     </div>
                     <Link to='/' className="text-xl font-semibold hidden lg:block text-white">EventPortal</Link>
@@ -45,12 +46,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* <button><FaSun></FaSun><FaMoon></FaMoon></button> */}
                     {
                         location.pathname == '/login' || location.pathname == '/register' ?
                             '' :
                             user ?
-                                <Avatar logout={logout} />
+                                <Avatar logout={logout} user={user} />
                                 :
                                 <Link className="hidden lg:btn lg:btn-primary text-white" to='/login'>Login</Link>
 
@@ -64,21 +64,21 @@ const Navbar = () => {
 // Active Navigation link
 const ActiveLink = ({ children, to }) => {
     return (
-        <NavLink className={({ isActive }) => isActive ? 'hover:bg-white/5 p-2 rounded-lg text-green-500 font-bold underline' : 'hover:bg-white/5 p-2 rounded-lg'} to={to}>
+        <NavLink className={({ isActive }) => isActive ? 'hover:bg-black/5 p-2 rounded-lg text-green-500 font-bold underline' : 'hover:bg-black/5 p-2 rounded-lg'} to={to}>
             {children}
         </NavLink>
     )
 }
 
 // for user profile avatar on navbar
-const Avatar = ({ logout }) => {
+const Avatar = ({ logout, user }) => {
     return (
         <div className='dropdown'>
             <div tabIndex={0} className='w-12 rounded-full overflow-hidden border-2 border-gray-400 hover:border-green-500 cursor-pointer transition-colors duration-300'>
                 <img src='https://placekitten.com/100/100' className='' />
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-[#EEEDEB] rounded-box w-52">
-                <li><a>Profile</a></li>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-[#EEEDEB] rounded-box w-52 right-0 lg:left-0">
+                <li>{user.email}</li>
                 <li className='mt-2'>
                     {
                         location.pathname == '/login' || location.pathname == '/register' ?
