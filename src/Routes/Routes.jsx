@@ -8,6 +8,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Service from "../components/Service/Service";
 import { serviceLoader } from "../utils/customLoader";
 import Error404 from "../Pages/Error/Error404";
+import About from "../Pages/About/About";
 
 const routes = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const routes = createBrowserRouter([
                 path: '/service/:serviceID',
                 element: <PrivateRoutes><Service /></PrivateRoutes>,
                 loader: async ({ params }) => await serviceLoader(params.serviceID)
+            },
+            {
+                path: '/about',
+                element: <About />
             },
             {
                 path: '/terms',

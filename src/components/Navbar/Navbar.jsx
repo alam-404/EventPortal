@@ -33,13 +33,13 @@ const Navbar = () => {
                 <div className="navbar-center lg:flex">
                     <Link to='/' className="text-xl font-semibold lg:hidden text-white">EventPortal</Link>
                     <ul className="hidden lg:flex gap-4 text-sm menu-horizontal px-1 text-white">
-                        <li className='hover:bg-white/5 p-2 rounded-lg'>
+                        <li>
                             <ActiveLink to='/'>Home</ActiveLink>
                         </li>
-                        <li className='hover:bg-white/5 p-2 rounded-lg'>
+                        <li>
                             <ActiveLink to='/services'>Services</ActiveLink>
                         </li>
-                        <li className='hover:bg-white/5 p-2 rounded-lg'>
+                        <li>
                             <ActiveLink to='/about'>About</ActiveLink>
                         </li>
                     </ul>
@@ -64,7 +64,7 @@ const Navbar = () => {
 // Active Navigation link
 const ActiveLink = ({ children, to }) => {
     return (
-        <NavLink className={({ isActive }) => isActive ? 'text-green-500 font-bold underline' : ''} to={to}>
+        <NavLink className={({ isActive }) => isActive ? 'hover:bg-white/5 p-2 rounded-lg text-green-500 font-bold underline' : 'hover:bg-white/5 p-2 rounded-lg'} to={to}>
             {children}
         </NavLink>
     )
