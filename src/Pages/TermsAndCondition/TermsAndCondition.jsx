@@ -1,7 +1,7 @@
 const TermsAndCondition = () => {
     return (
         <div className="my-20">
-            <article className="text-justify">
+            <article className="mx-12">
                 <h1 className="font-bold text-4xl">Terms and Conditions of Use</h1>
                 <div className="ms-4">
                     <p className='mt-4'>
@@ -84,6 +84,7 @@ const TermsAndCondition = () => {
 
                             By using the Service, you agree to comply with these Terms. Thank you for using EventPortal!
                         </p>
+                        <br />
                         <p className='ms-6'>
                             Do you want some gifts? maybe chocolates? then contact me! hehe...
                             I can&apos;t give it to you right now but I will note it down for later. Ow yea I forgot nobody read terms and conditions.

@@ -27,7 +27,7 @@ const Root = () => {
                 <section className='lg:mx-32'>
                     <Outlet></Outlet>
                 </section>
-                <footer className='mt-10'>
+                <footer className='mt-10 relative'>
                     <Footer />
                 </footer>
             </div>

@@ -15,11 +15,14 @@ const Service = () => {
 
     return (
         <>
-            <div className="hero h-[100lvh]">
+            <div className="hero mt-12">
                 <div className="w-1/2 mx-auto">
+                    <div className="hero-content flex-col">
+                        <img src={service.image_url} className="rounded-lg" />
+                    </div>
                     <div>
                         <h1 className="text-4xl font-medium">{service.service_name}</h1>
-                        <p className="mt-5 text-justify">{service.description}</p>
+                        <p className="mt-5">{service.description}</p>
                     </div>
                     <div className="mt-5">
                         <h3 className="text-xl font-medium">Inside the package</h3>
