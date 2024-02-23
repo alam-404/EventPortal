@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Loading from '../components/Loading/Loading';
@@ -11,12 +11,13 @@ import { ToastContainer } from 'react-toastify';
 // Root Layout
 const Root = () => {
     const { pageLoading } = useContext(AuthContext)
+    const navigation = useNavigation()
 
     return (
         <>
         <ToastContainer />
         {
-            pageLoading ? 
+            pageLoading || navigation.state === 'loading' ? 
             <Loading />
             :
             <div className='scroll-smooth'>
